@@ -1,9 +1,21 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
-        System.out.println("Hello, World!");
+    static void main(String[] args) {
+        String names;
+        if (args.length > 0) {
+            StringBuilder nameBuilder = new StringBuilder();
+
+            for (int i = 0; i < args.length; i++) {
+                nameBuilder.append(args[i]);
+                if (i < args.length - 1) {
+                    nameBuilder.append(", ");
+                }
+            }
+            names = nameBuilder.toString();
+        } else {
+            names = "World";
+        }
+        System.out.println("Hello, " + names + "!");
     }
 }
